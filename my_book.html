@@ -1,12 +1,81 @@
-<style>
-    h1{
-        color:green;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <h1 >我的个人博客</h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W3Cschool(w3cschool.cn)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav {
+      margin: 100px;
+    }
+    .nav>li {
+      position: relative;
+      float: left;
+      width: 80px;
+      height: 41px;
+      text-align: center;
+    }
+    .nav li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 41px;
+      color: #333;
+    }
+    .nav>li>a:hover {
+      background-color: #eee;
+    }
+    .nav ul {
+      display: none;
+      position: absolute;
+      top: 41px;
+      left: 0;
+      width: 100%;
+      border-left: 1px solid #FECC5B;
+      border-right: 1px solid #FECC5B;
+    }
+    .nav ul li {
+      border-bottom: 1px solid #FECC5B;
+    }
+    .nav ul li a:hover {
+      background-color: #FFF5DA;
+    }
+  </style>
 </head>
-
 <body>
-
+  <ul class="nav">
+    <li>
+      <a href="javascript:;">下拉</a>
+      <ul>
+        <li><a href="javascript:;">下拉1</a></li>
+        <li><a href="javascript:;">下拉2</a></li>
+        <li><a href="javascript:;">下拉3</a></li>
+        <li><a href="javascript:;">下拉4</a></li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    var lis = document.querySelector('.nav').children;
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].onmouseover = function () {
+        this.children[i].style.display = 'block';
+      }
+      lis[i].onmouseout = function () {
+        this.children[i].style.display = 'none';
+      }
+    }
+    console.log(lis.length);
+  </script>
 </body>
+</html>
